@@ -1,17 +1,14 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
   <diagram name="to-be-clean" id="iQ6u7mXqTRbN4q7YQu0e">
-    <mxGraphModel dx="2147" dy="2201" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1460" dy="984" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="k8s-cluster-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;dashed=1;" value="&lt;b&gt;Kubernetes Cluster (растянутый)&lt;/b&gt;&lt;br&gt;Managed Service for Kubernetes" vertex="1">
-          <mxGeometry height="1140" width="790" x="260" y="100" as="geometry" />
+          <mxGeometry height="1075" width="755" x="300" y="75" as="geometry" />
         </mxCell>
         <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" value="&lt;b&gt;InsureTech - Целевая архитектура (to-be)&lt;/b&gt;" vertex="1">
-          <mxGeometry height="40" width="250" x="300" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="legend-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;" value="&lt;b&gt;Легенда&lt;/b&gt;&lt;br&gt;Зона доступности&lt;br&gt;Балансировщик&lt;br&gt;Кэш/БД&lt;br&gt;Мониторинг&lt;br&gt;Внешние системы" vertex="1">
-          <mxGeometry height="160" width="160" x="1110" y="110" as="geometry" />
+          <mxGeometry height="40" width="560" x="300" y="20" as="geometry" />
         </mxCell>
         <mxCell id="user-box" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" value="Клиенты" vertex="1">
           <mxGeometry height="80" width="80" x="50" y="200" as="geometry" />
@@ -23,16 +20,16 @@
           <mxGeometry height="60" width="150" x="180" y="250" as="geometry" />
         </mxCell>
         <mxCell id="zone1-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#e3ebff;strokeColor=#5282ff;fontColor=#000000;" value="&lt;b&gt;Зона доступности 1&lt;/b&gt;&lt;br&gt;(Москва)" vertex="1">
-          <mxGeometry height="480" width="550" x="380" y="120" as="geometry" />
+          <mxGeometry height="480" width="590" x="340" y="120" as="geometry" />
         </mxCell>
         <mxCell id="zone2-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#e3ebff;strokeColor=#5282ff;fontColor=#000000;" value="&lt;b&gt;Зона доступности 2&lt;/b&gt;&lt;br&gt;(Санкт-Петербург)" vertex="1">
-          <mxGeometry height="500" width="650" x="315" y="710" as="geometry" />
+          <mxGeometry height="410" width="650" x="315" y="710" as="geometry" />
         </mxCell>
         <mxCell id="regional-lb1-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" value="&lt;b&gt;Ingress Controller&lt;/b&gt;" vertex="1">
           <mxGeometry height="50" width="140" x="410" y="160" as="geometry" />
         </mxCell>
         <mxCell id="regional-lb2-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" value="&lt;b&gt;Ingress Controller&lt;/b&gt;" vertex="1">
-          <mxGeometry height="50" width="140" x="400" y="770" as="geometry" />
+          <mxGeometry height="50" width="140" x="330" y="840" as="geometry" />
         </mxCell>
         <mxCell id="app-b2c-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="&lt;b&gt;B2C Frontend&lt;/b&gt;&lt;br&gt;React SPA" vertex="1">
           <mxGeometry height="60" width="120" x="590" y="260" as="geometry" />
@@ -40,17 +37,35 @@
         <mxCell id="app-b2b-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="&lt;b&gt;B2B API Gateway&lt;/b&gt;&lt;br&gt;Rate Limiting" vertex="1">
           <mxGeometry height="60" width="120" x="420" y="270" as="geometry" />
         </mxCell>
+        <mxCell id="3kSRHBSmp3KyxLTGYPvi-2" edge="1" parent="1" source="core-app-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="aggregator-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3kSRHBSmp3KyxLTGYPvi-5" edge="1" parent="1" source="core-app-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="client-info-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="core-app-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="&lt;b&gt;core-app&lt;/b&gt;&lt;br&gt;(рефакторинг)" vertex="1">
-          <mxGeometry height="40" width="140" x="580" y="420" as="geometry" />
+          <mxGeometry height="40" width="140" x="590" y="420" as="geometry" />
         </mxCell>
         <mxCell id="client-info-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="&lt;b&gt;client-info&lt;/b&gt;" vertex="1">
-          <mxGeometry height="40" width="140" x="414" y="400" as="geometry" />
+          <mxGeometry height="40" width="140" x="360" y="370" as="geometry" />
         </mxCell>
         <mxCell id="aggregator-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="&lt;b&gt;ins-product-aggregator&lt;/b&gt;" vertex="1">
           <mxGeometry height="40" width="140" x="750" y="290" as="geometry" />
         </mxCell>
+        <mxCell id="3kSRHBSmp3KyxLTGYPvi-3" edge="1" parent="1" source="settlement-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="aggregator-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="855" y="440" />
+              <mxPoint x="855" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="settlement-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="&lt;b&gt;ins-comp-settlement&lt;/b&gt;" vertex="1">
-          <mxGeometry height="40" width="140" x="720" y="490" as="geometry" />
+          <mxGeometry height="40" width="140" x="750" y="470" as="geometry" />
         </mxCell>
         <mxCell id="db-master-box" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;Master" vertex="1">
           <mxGeometry height="60" width="100" x="440" y="500" as="geometry" />
@@ -59,16 +74,16 @@
           <mxGeometry height="60" width="100" x="590" y="500" as="geometry" />
         </mxCell>
         <mxCell id="db-replica-box" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;Synchronous Replica" vertex="1">
-          <mxGeometry height="60" width="100" x="430" y="1030" as="geometry" />
+          <mxGeometry height="60" width="100" x="440" y="730" as="geometry" />
         </mxCell>
         <mxCell id="redis-replica-box" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;" value="&lt;b&gt;Redis&lt;/b&gt;&lt;br&gt;Replica" vertex="1">
-          <mxGeometry height="60" width="100" x="580" y="730" as="geometry" />
+          <mxGeometry height="60" width="100" x="590" y="720" as="geometry" />
         </mxCell>
         <mxCell id="app-b2b2-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="&lt;b&gt;B2B API Gateway&lt;/b&gt;&lt;br&gt;Rate Limiting" vertex="1">
-          <mxGeometry height="60" width="120" x="770" y="840" as="geometry" />
+          <mxGeometry height="60" width="120" x="414" y="980" as="geometry" />
         </mxCell>
         <mxCell id="monitoring-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" value="&lt;b&gt;Мониторинг и алертинг&lt;/b&gt;&lt;br&gt;Prometheus + Grafana&lt;br&gt;Yandex Monitoring&lt;br&gt;Авто-восстановление" vertex="1">
-          <mxGeometry height="100" width="200" x="-10" y="570" as="geometry" />
+          <mxGeometry height="100" width="200" x="10" y="570" as="geometry" />
         </mxCell>
         <mxCell id="external-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;" value="&lt;b&gt;Внешние системы&lt;/b&gt;&lt;br&gt;Платежный сервис&lt;br&gt;Страховые компании (5)&lt;br&gt;CDN для статики&lt;br&gt;Object Storage для бэкапов" vertex="1">
           <mxGeometry height="120" width="200" x="1060" y="390" as="geometry" />
@@ -105,26 +120,42 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="conn7" edge="1" parent="1" source="regional-lb2-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="app-b2c2-box">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="810" />
+              <mxPoint x="660" y="810" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="conn8" edge="1" parent="1" source="regional-lb2-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="app-b2b2-box">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="conn9" edge="1" parent="1" source="app-b2c-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="core-app-box">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="350" />
+              <mxPoint x="660" y="350" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="conn10" edge="1" parent="1" source="app-b2b-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="core-app-box">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="640" y="350" />
+              <mxPoint x="510" y="390" />
+              <mxPoint x="640" y="390" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="conn11" edge="1" parent="1" source="core-app-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="db-master-box">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="conn12" edge="1" parent="1" source="core-app-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="redis-box">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="conn12" edge="1" parent="1" source="core-app-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" target="redis-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="625" y="480" />
+              <mxPoint x="620" y="480" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="conn13" edge="1" parent="1" source="db-master-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;dashed=1;" target="db-replica-box">
           <mxGeometry relative="1" as="geometry">
@@ -134,16 +165,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="conn14" edge="1" parent="1" source="redis-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;dashed=1;" target="redis-replica-box">
+        <mxCell id="conn15" edge="1" parent="1" source="client-info-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="db-master-box">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="640" y="680" />
-              <mxPoint x="640" y="680" />
+              <mxPoint x="420" y="455" />
+              <mxPoint x="470" y="455" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="conn15" edge="1" parent="1" source="client-info-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="db-master-box">
-          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="conn16" edge="1" parent="1" source="aggregator-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="external-box">
           <mxGeometry relative="1" as="geometry">
@@ -166,47 +194,65 @@
         <mxCell id="conn19" edge="1" parent="1" source="app-b2c2-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="core-app-box">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="700" y="790" />
+              <mxPoint x="700" y="900" />
+              <mxPoint x="700" y="900" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="conn20" edge="1" parent="1" source="app-b2c2-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;dashed=1;" value="Service Mesh">
-          <mxGeometry relative="1" x="0.7273" y="-110" as="geometry">
+        <mxCell id="conn20" edge="1" parent="1" source="app-b2c2-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;dashed=1;" target="app-b2b2-box" value="Service Mesh">
+          <mxGeometry relative="1" x="0.2" y="-20" as="geometry">
             <mxPoint as="offset" />
             <Array as="points">
-              <mxPoint x="480" y="600" />
+              <mxPoint x="790" y="1070" />
+              <mxPoint x="490" y="1070" />
             </Array>
             <mxPoint x="480" y="440" as="sourcePoint" />
             <mxPoint x="480" y="860" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="annotation1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=10;" value="✓ Гео-балансировка&lt;br&gt;✓ Health checks&lt;br&gt;✓ Фейловер при проблемах" vertex="1">
-          <mxGeometry height="40" width="150" x="180" y="320" as="geometry" />
+          <mxGeometry height="40" width="150" x="165" y="200" as="geometry" />
         </mxCell>
         <mxCell id="annotation2" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=10;" value="✓ Единый кластер Kubernetes&lt;br&gt;✓ Авто-масштабирование&lt;br&gt;✓ Распределение подов по зонам" vertex="1">
-          <mxGeometry height="50" width="180" x="1020" y="780" as="geometry" />
+          <mxGeometry height="50" width="180" x="830" y="620" as="geometry" />
         </mxCell>
         <mxCell id="annotation3" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=10;" value="✓ Rate limiting для партнёров&lt;br&gt;✓ Изоляция трафика B2B/B2C&lt;br&gt;✓ Приоритизация запросов" vertex="1">
-          <mxGeometry height="50" width="120" x="230" y="490" as="geometry" />
+          <mxGeometry height="50" width="120" x="280" y="510" as="geometry" />
         </mxCell>
-        <mxCell id="annotation4" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=10;" value="✓ Синхронная репликация&lt;br&gt;✓ RPO 15 мин., RTO 45 мин.&lt;br&gt;✓ Автофейловер с Patroni" vertex="1">
-          <mxGeometry height="50" width="100" x="1050" y="690" as="geometry" />
-        </mxCell>
-        <mxCell id="annotation5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=10;" value="✓ Кэширование продуктов&lt;br&gt;✓ Сессии пользователей&lt;br&gt;✓ Уменьшение нагрузки на БД" vertex="1">
-          <mxGeometry height="50" width="100" x="1080" y="605" as="geometry" />
+        <mxCell id="annotation4" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=10;size=22;" value="✓ Синхронная репликация&lt;br&gt;✓ RPO 15 мин., RTO 45 мин.&lt;br&gt;✓ Автофейловер с Patroni" vertex="1">
+          <mxGeometry height="50" width="150" x="350" y="600" as="geometry" />
         </mxCell>
         <mxCell id="annotation6" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=10;" value="✓ 24/7 мониторинг&lt;br&gt;✓ Автоматические алерты&lt;br&gt;✓ Метрики SLA/SLO&lt;br&gt;✓ Быстрое восстановление" vertex="1">
           <mxGeometry height="60" width="200" x="30" y="690" as="geometry" />
         </mxCell>
-        <mxCell id="gwWjGdBcP7wb-w6pHbce-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;dashed=1;" target="app-b2c2-box" value="">
+        <mxCell id="gwWjGdBcP7wb-w6pHbce-1" edge="1" parent="1" source="settlement-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;dashed=1;" target="app-b2c2-box" value="">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points" />
+            <Array as="points">
+              <mxPoint x="710" y="500" />
+            </Array>
             <mxPoint x="480" y="440" as="sourcePoint" />
             <mxPoint x="480" y="860" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="app-b2c2-box" parent="1" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="&lt;b&gt;B2C Frontend&lt;/b&gt;&lt;br&gt;React SPA" vertex="1">
-          <mxGeometry height="60" width="120" x="600" y="1040" as="geometry" />
+          <mxGeometry height="60" width="120" x="730" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="3kSRHBSmp3KyxLTGYPvi-1" edge="1" parent="1" source="redis-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;dashed=1;" target="redis-replica-box" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="640" y="560" as="sourcePoint" />
+            <mxPoint x="640" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="annotation5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=10;" value="✓ Кэширование продуктов&lt;br&gt;✓ Сессии пользователей&lt;br&gt;✓ Уменьшение нагрузки на БД" vertex="1">
+          <mxGeometry height="50" width="160" x="540" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="3kSRHBSmp3KyxLTGYPvi-4" edge="1" parent="1" source="settlement-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.733;entryY=-0.011;entryDx=0;entryDy=0;entryPerimeter=0;" target="db-master-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="513" y="480" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
