@@ -3,7 +3,7 @@
 # Задание 2. Динамическая маршрутизация на основании показателей количества запросов в секунду
 
 ## Настройка кластера
-
+Установите Prometheus в вашем кластере
 ```bash
 # Установите Prometheus в вашем кластере
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts

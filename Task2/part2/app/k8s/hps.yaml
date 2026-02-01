@@ -17,3 +17,4 @@ spec:
         target:
           type: AverageValue
           averageValue: 10 #Целевое значение RPS на один под
+   
