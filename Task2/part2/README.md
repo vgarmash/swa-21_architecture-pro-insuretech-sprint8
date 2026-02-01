@@ -93,3 +93,26 @@ kubectl get hpa -w
 ```
 
 ## Решение
+
+minikube сдох
+попатки переустановить prometheus не увенчались успехом
+Убил несколько часов на эти переустановки.
+
+```bash
+[slava@altlinux-vm-1 k8s]$ helm install prometheus-operator prometheus-community/kube-prometheus-stack -n monitoring
+Error: INSTALLATION FAILED: create: failed to create: namespaces "monitoring" not found
+[slava@altlinux-vm-1 k8s]$ kubectl create namespace monitoring
+namespace/monitoring created
+[slava@altlinux-vm-1 k8s]$ helm install prometheus-operator prometheus-community/kube-prometheus-stack -n monitoring
+Error: INSTALLATION FAILED: failed to create resource: Internal error occurred: failed calling webhook "prometheusrulevalidate.monitoring.coreos.com": failed to call webhook: Post "https://prometheus-operator-kube-p-operator.monitoring.svc:443/admission-prometheusrules/validate?timeout=10s": dial tcp 10.108.90.123:443: connect: connection refused
+[slava@altlinux-vm-1 k8s]$ helm search repo prometheus-community/kube-prometheus-stack
+NAME                                            CHART VERSION   APP VERSION     DESCRIPTION                                       
+prometheus-community/kube-prometheus-stack      81.4.2          v0.88.1         kube-prometheus-stack collects Kubernetes manif...
+[slava@altlinux-vm-1 k8s]$ helm install prometheus-operator prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
+Error: INSTALLATION FAILED: failed to create resource: Internal error occurred: failed calling webhook "prometheusrulevalidate.monitoring.coreos.com": failed to call webhook: Post "https://prometheus-operator-kube-p-operator.monitoring.svc:443/admission-prometheusrules/validate?timeout=10s": dial tcp 10.99.18.189:443: connect: connection refused
+[slava@altlinux-vm-1 k8s]$ 
+
+```
+
+# Выводы
+Должно работать, но протестировать не получилось
