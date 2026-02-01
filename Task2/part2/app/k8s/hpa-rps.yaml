@@ -6,18 +6,19 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: scaletestapp
+    name: scaletestapp-deploy
   minReplicas: 1
   maxReplicas: 10
   metrics:
-    - type: Object
-      object:
-        describedObject:
-          apiVersion: v1
-          kind: Service
-          name: scaletestapp
+    - type: Pods
+      pods:
         metric:
           name: http_requests_per_second
         target:
-          type: Value
-          value: "10"
+          type: AverageValue
+          averageValue: "5"
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 0
+    scaleDown:
+      stabilizationWindowSeconds: 60

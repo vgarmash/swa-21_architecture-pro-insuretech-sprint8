@@ -18,11 +18,10 @@
 1. На запущеном minikube
    - запуск тестового приложения через манифесты
     ```bash
-    cd Task2/app
+    cd Task2/part1/app
     kubectl apply -f k8s/deployment.yaml
     kubectl apply -f k8s/service.yaml
     kubectl apply -f k8s/hpa-memory.yaml
-    
     ```
 
 1. Пробросить порт к приложению:
@@ -53,18 +52,18 @@
     minikube dashboard 
     ```
 Изначально была 1 реплика в деплойменте:
-![Deployments_initial.png](Deployments_initial.png)
+![Deployments_initial.png](media/Deployments_initial.png)
 
 ## Результаты
 С ростом нагрузки количество реплик стало увеличиваться.
-![Deployments_2.png](Deployments_2.png)
-![Deployments_4.png](Deployments_4.png)
+![Deployments_2.png](media/Deployments_2.png)
+![Deployments_4.png](media/Deployments_4.png)
 
 Лог HPA также показывает прирост реплик:
 ```bash
  kubectl get hpa -w
 ```
-[hpa-memory.log](hpa-memory.log)
+[hpa-memory.log](media/hpa-memory.log)
 
 ## Вывод
 

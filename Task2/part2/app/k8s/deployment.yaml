@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scaletestapp
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8080"
+    prometheus.io/path: "/metrics"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scaletestapp
+  template:
+    metadata:
+      labels:
+        app: scaletestapp
+    spec:
+      containers:
+        - image: ghcr.io/yandex-practicum/scaletestapp
+          name: scaletestapp
+          ports:
+            - containerPort: 8080
+              name: http-metrics
+          resources:
+            limits:
+              memory: "10Mi"
