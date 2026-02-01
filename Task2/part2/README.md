@@ -49,19 +49,27 @@ kubectl apply -f ./Task2/part2/app/k8s/deployment.yaml
 kubectl apply -f ./Task2/part2/app/k8s/service-metric.yaml
 
 # Установить Prometheus Adapter
-helm install prometheus-adapter prometheus-community/prometheus-adapter --namespace monitoring
+helm install prometheus-adapter prometheus-community/prometheus-adapter -f ./Task2/part2/app/k8s/values.yaml -n monitoring
 
-helm upgrade prometheus-adapter prometheus-community/prometheus-adapter \
-  -n monitoring \
-  --set prometheus.url=http://prometheus-kube-prometheus-prometheus.monitoring.svc \
-  --set prometheus.port=9090
+#NAME: prometheus-adapter
+#LAST DEPLOYED: Sun Feb  1 19:48:08 2026
+#NAMESPACE: monitoring
+#STATUS: deployed
+#REVISION: 1
+#TEST SUITE: None
+#NOTES:
+#prometheus-adapter has been deployed.
+#In a few minutes you should be able to list metrics using the following command(s):
+#
+#  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1
+
+
 
 # Применить configMap и prometheus-adapter
 kubectl apply -f ./Task2/part2/app/k8s/podmonitor.yaml 
-kubectl apply -f ./Task2/part2/app/k8s/prometheus-adapter-config.yaml
 
 # Открыть Prometeus UI
-kubectl port-forward svc/prometheus-kube-prometheus-prometheus  9090:9090 -n monitoring
+kubectl port-forward svc/prometheus-operator-kube-p-prometheus  9090:9090 -n monitoring
 ```
 
 Проверки:

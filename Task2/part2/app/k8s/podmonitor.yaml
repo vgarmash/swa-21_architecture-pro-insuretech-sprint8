@@ -13,3 +13,4 @@ spec:
   - port: http-metrics  # Имя порта из deployment
     path: /metrics
     interval: 15s
+
