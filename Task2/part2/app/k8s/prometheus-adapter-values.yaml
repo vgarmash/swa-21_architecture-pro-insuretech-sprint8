@@ -1,0 +1,20 @@
+# prometheus-adapter-values.yaml
+prometheus:
+  url: http://prometheus-prometheus-stack-kube-prom-prometheus.monitoring.svc.cluster.local
+  port: 9090
+
+rules:
+  default: false  # Отключаем стандартные правила
+
+custom:
+  rules:
+    # Правило для http_requests_total с преобразованием в RPS
+    - seriesQuery: 'http_requests_total{namespace!="",pod!=""}'
+      resources:
+        overrides:
+          namespace: {resource: "namespace"}
+          pod: {resource: "pod"}
+      name:
+        matches: "^(.*)_total$"
+        as: "${1}_per_second"
+      metricsQuery: 'sum(rate(<<.Series>>{<<.LabelMatchers>>}[2m])) by (<<.GroupBy>>)'Z cjrhfnbk
