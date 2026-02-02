@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: scalable-pod-identifier-sm
+  namespace: default
+  labels:
+    serviceMonitorSelector: prometheus
+spec:
+  endpoints:
+    - port: http-metrics # Имя порта из вашего Service.
+  namespaceSelector:
+    matchNames:
+      - default
+  selector:
+    matchLabels:
+      app: scaletestapp # Этот тег должен совпадать с тегом в вашем Service.

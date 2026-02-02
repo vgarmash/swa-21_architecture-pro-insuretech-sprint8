@@ -1,0 +1,22 @@
+[slava@altlinux-vm-1 Task2]$ kubectl get hpa -w
+NAME                      REFERENCE                 TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
+scaletestapp-hpa-memory   Deployment/scaletestapp   84%/80%   1         10        1          63m
+scaletestapp-hpa-memory   Deployment/scaletestapp   17%/80%   1         10        1          64m
+scaletestapp-hpa-memory   Deployment/scaletestapp   17%/80%   1         10        2          64m
+scaletestapp-hpa-memory   Deployment/scaletestapp   17%/80%   1         10        2          65m
+scaletestapp-hpa-memory   Deployment/scaletestapp   17%/80%   1         10        2          68m
+scaletestapp-hpa-memory   Deployment/scaletestapp   <unknown>/80%   1         10        0          0s
+scaletestapp-hpa-memory   Deployment/scaletestapp   17%/80%         1         10        1          16s
+scaletestapp-hpa-memory   Deployment/scaletestapp   50%/80%         1         10        1          6m1s
+scaletestapp-hpa-memory   Deployment/scaletestapp   70%/80%         1         10        1          7m1s
+scaletestapp-hpa-memory   Deployment/scaletestapp   71%/80%         1         10        1          8m1s
+scaletestapp-hpa-memory   Deployment/scaletestapp   86%/80%         1         10        1          9m1s
+scaletestapp-hpa-memory   Deployment/scaletestapp   87%/80%         1         10        1          10m
+scaletestapp-hpa-memory   Deployment/scaletestapp   95%/80%         1         10        1          11m
+scaletestapp-hpa-memory   Deployment/scaletestapp   95%/80%         1         10        2          11m
+scaletestapp-hpa-memory   Deployment/scaletestapp   94%/80%         1         10        2          12m
+scaletestapp-hpa-memory   Deployment/scaletestapp   94%/80%         1         10        3          12m
+scaletestapp-hpa-memory   Deployment/scaletestapp   102%/80%        1         10        3          13m
+scaletestapp-hpa-memory   Deployment/scaletestapp   102%/80%        1         10        4          13m
+scaletestapp-hpa-memory   Deployment/scaletestapp   109%/80%        1         10        4          14m
+scaletestapp-hpa-memory   Deployment/scaletestapp   109%/80%        1         10        6          14m

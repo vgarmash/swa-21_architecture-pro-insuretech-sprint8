@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: scaletestapp-monitor
+  namespace: default  # приложение находится в default namespace
+  labels:
+    release: prometheus  # Должен совпадать с selector Prometheus
+spec:
+  selector:
+    matchLabels:
+      app: scaletestapp  # Ищет поды с этим лейблом
+  podMetricsEndpoints:
+  - port: http-metrics  # Имя порта из deployment
+    path: /metrics
+    interval: 15s
+
