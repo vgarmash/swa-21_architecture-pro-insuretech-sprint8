@@ -27,7 +27,9 @@ spec:
             - containerPort: 8080
               name: http-metrics
           resources:
-            limits:
-              memory: "10Mi"
             requests:
-              memory: "5Mi"
+              cpu: "50m"
+              memory: "15Mi"
+            limits:
+              cpu: "200m"
+              memory: "30Mi"
