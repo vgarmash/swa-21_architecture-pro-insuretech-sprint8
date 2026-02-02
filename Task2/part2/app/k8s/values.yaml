@@ -1,15 +1,13 @@
 prometheus:
-  url: http://prometheus-operator-kube-p-prometheus.monitoring.svc
+  url: http://prometheus-operator-kube-p-prometheus
   port: 9090
 rules:
-  default: false
-  custom:
-    - seriesQuery: 'http_requests_total{namespace!="",pod!=""}'
-      resources:
-        overrides:
-          namespace: {resource: "namespace"}
-          pod: {resource: "pod"}
-      name:
-        matches: "^http_requests_total"
-        as: "http_requests_per_second"
-      metricsQuery: 'sum(rate(htpromettp_requests_total{<<.LabelMatchers>>}[30s])) by (<<.GroupBy>>)'
+  - seriesQuery: 'http_requests_total{kubernetes_namespace!="",kubernetes_pod_name!=""}'
+    resources:
+      overrides:
+        kubernetes_namespace: {resource: "namespace"}
+        kubernetes_pod_name: {resource: "pod"}
+    name:
+      matches: "^(.*)_total"
+      as: "${1}_per_second"
+    metricsQuery: 'sum(rate(<<.Series>>{<<.LabelMatchers>>}[2m])) by (<<.GroupBy>>)'

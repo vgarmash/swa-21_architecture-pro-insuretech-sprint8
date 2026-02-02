@@ -6,7 +6,7 @@ spec:
   selector:
     app: scaletestapp
   ports:
-    - protocol: TCP
-      port: 8080
+    - port: 8080
+      protocol: TCP
       targetPort: 8080
   type: LoadBalancer

@@ -5,10 +5,10 @@ metadata:
   labels:
     app: scaletestapp
 spec:
-  type: LoadBalancer
+  selector:
+    app: scaletestapp
   ports:
     - port: 8080
       protocol: TCP
       targetPort: 8080
-  selector:
-    app: scaletestapp
+      name: http-metrics
